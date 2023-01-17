@@ -1,0 +1,219 @@
+/* -----------------------------------------------------
+Global Variables
+----------------------------------------------------- */
+
+:root {
+  --dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+  --dark-gray-magenta: hsl(303, 10%, 53%);
+  --light-gray-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+  --font-size: 15px;
+  --font-family: "League Spartan", sans-serif;
+}
+
+/* -----------------------------------------------------
+Global Styling
+----------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 160vh;
+  background-color: var(--white);
+  background-image: url(./images/bg-pattern-top-mobile.svg),
+    url(./images/bg-pattern-bottom-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top, bottom;
+  background-size: contain;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+/* -----------------------------------------------------
+Container Styling
+----------------------------------------------------- */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner-container {
+  width: 80%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* -----------------------------------------------------
+Text Styling
+----------------------------------------------------- */
+
+.text-container {
+  width: 75%;
+}
+
+.text-container h2 {
+  margin-top: 4rem;
+  color: var(--dark-magenta);
+}
+
+.text-container p {
+  margin-top: 1rem;
+  line-height: 1.2rem;
+  color: var(--dark-gray-magenta);
+}
+
+/* -----------------------------------------------------
+Rating Container Styling
+----------------------------------------------------- */
+
+.rating-container {
+  margin-top: 2rem;
+}
+
+[class^="rating-"] {
+  width: 100%;
+  height: 3.5rem;
+  background: var(--light-gray-magenta);
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  row-gap: 0.8rem;
+}
+
+[class^="rating-inner-"] {
+  height: 65%;
+  display: grid;
+  row-gap: 0.2rem;
+}
+
+[class^="rating-inner-"] h6 {
+  color: var(--dark-magenta);
+}
+
+/* -----------------------------------------------------
+Review Container Styling
+----------------------------------------------------- */
+
+.review-container {
+  height: 50rem;
+  margin-top: 11rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+[class^="review-"] {
+  width: 100%;
+  height: 12rem;
+  background: var(--dark-magenta);
+  border-radius: 7px;
+}
+
+[class^="review-"] p {
+  margin: 2rem;
+  text-align: justify;
+  line-height: 1.2rem;
+  color: var(--light-gray-magenta);
+}
+
+[class^="review-"]:last-child {
+  margin-bottom: 2rem;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 35%;
+  margin: 2rem;
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 20%;
+}
+
+.profile h5 {
+  text-align: start;
+  color: var(--white);
+  font-size: 400;
+}
+
+.profile span {
+  margin-top: 0.2rem;
+  color: var(--soft-pink);
+  opacity: 0.6;
+  display: block;
+}
+
+/* -----------------------------------------------------
+Media Query Styling
+----------------------------------------------------- */
+
+@media screen and (min-width: 768px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./images/bg-pattern-top-desktop.svg),
+      url(./images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .inner-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "A B"
+      "C C";
+  }
+  .text-container {
+    grid-area: A;
+    margin-top: 5rem;
+    text-align: start;
+  }
+  .text-container h2 {
+    font-size: 3.5rem;
+  }
+  .text-container p {
+    margin-top: 2.5rem;
+    line-height: 1.5rem;
+  }
+  .rating-container {
+    grid-area: B;
+    background: none;
+  }
+  .review-container {
+    grid-area: C;
+    margin-top: 3rem;
+    flex-direction: row;
+    gap: 1.5rem;
+    background: none;
+  }
+  .review-2 {
+    margin-top: 1rem;
+  }
+  .review-3 {
+    margin-top: 2rem;
+  }
+  .rating-1 {
+    margin-left: -4rem;
+    margin-right: 4rem;
+  }
+  .rating-2 {
+    margin-left: -2rem;
+    margin-right: 2rem;
+  }
+}
